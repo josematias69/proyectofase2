@@ -17,7 +17,7 @@ public class ScriptStack implements Stack {
     @Override
     public String pop() {
         if (stack.isEmpty()) {
-            throw new ScriptException("Stack vacío");
+            throw new ScriptException("Error: Stack vacío");
         }
         return stack.pop();
     }
@@ -25,7 +25,7 @@ public class ScriptStack implements Stack {
     @Override
     public String peek() {
         if (stack.isEmpty()) {
-            throw new ScriptException("Stack vacío");
+            throw new ScriptException("Error: Stack vacío");
         }
         return stack.peek();
     }
@@ -36,9 +36,12 @@ public class ScriptStack implements Stack {
     }
 
     @Override
+    public int size() {
+        return stack.size();
+    }
+
+    @Override
     public String toString() {
         return stack.toString();
     }
 }
-
-
